@@ -3,6 +3,7 @@ export default class DrawGameField {
     this.fieldSize = 4;
 
     this.drawGameField();
+    this.fieldsHitAndMiss();
   }
 
   drawGameField() {
@@ -23,5 +24,16 @@ export default class DrawGameField {
     document.body.appendChild(this.gameFieldConteiner);
 
     this.arrayCells = Array.from(this.gameField.children);
+  }
+
+  fieldsHitAndMiss() {
+    this.hitBlock = document.createElement('p');
+    this.hitBlock.classList.add('hit');
+
+    this.missBlock = document.createElement('p');
+    this.missBlock.classList.add('miss');
+    
+    this.gameFieldConteiner.insertAdjacentElement('afterbegin', this.hitBlock);
+    this.gameFieldConteiner.appendChild(this.missBlock);
   }
 }

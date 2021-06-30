@@ -7,18 +7,12 @@ export default class Goblin {
     this.goblin = null;
 
     this.drawGoblin();
-    this.goblinActive();
+    this.movementGoblin();
   }
 
   drawGoblin() {
     this.goblin = document.createElement('div');
     this.goblin.classList.add('goblin');
-  }
-
-  goblinActive() {
-    this.activeSetTimeout = setTimeout(() => {
-      this.movementGoblin();
-    }, 2000);
   }
 
   movementGoblin() {
@@ -32,7 +26,7 @@ export default class Goblin {
     this.gameField.children[value].appendChild(this.goblin);
     this.activeSetTimeout = setTimeout(() => {
       this.movementGoblin();
-    }, 2000);
+    }, 1000);
   }
 
   stopActive() {

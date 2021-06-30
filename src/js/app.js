@@ -1,7 +1,8 @@
 import DrawGameField from './gameField/gameField';
 import Goblin from './Goblin/Goblin';
+import GoblinGame from './GoblinGame/GoblinGame';
 
-new DrawGameField();
-new Goblin();
+const gameField = new DrawGameField();
+const goblin = new Goblin();
 
-console.log('Привет мир');
+const game = new GoblinGame(gameField, goblin);
