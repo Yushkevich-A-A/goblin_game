@@ -17,9 +17,9 @@ export default class GoblinGame {
     this.gameField.missBlock.textContent = this.missCounter;
   }
 
-  addListeners() {
-    document.addEventListener('mouseup', event => {
-      
-    })
-  }
+  // addListeners() {
+  //   document.addEventListener('mouseup', event => {
+  //     this.gameField.gameField.style.cursor = ''
+  //   })
+  // }
 }
