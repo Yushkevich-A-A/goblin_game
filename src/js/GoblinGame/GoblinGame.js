@@ -1,3 +1,5 @@
+/* eslint-disable no-alert */
+
 export default class GoblinGame {
   constructor(gameField, goblin) {
     this.gameField = gameField;
@@ -5,15 +7,15 @@ export default class GoblinGame {
     this.init();
   }
 
-  init(){
-    this.resetGame()
-    this.listenerCounter()
+  init() {
+    this.resetGame();
+    this.listenerCounter();
   }
 
   resetGame() {
     this.hitCounter = 0;
     this.missCounter = 0;
-    this.drawCount()
+    this.drawCount();
   }
 
   drawCount() {
@@ -22,17 +24,17 @@ export default class GoblinGame {
   }
 
   listenerCounter() {
-    document.addEventListener('mousedown', event => {
+    document.addEventListener('mousedown', (event) => {
       if (event.target.closest('.goblin')) {
         this.hitCounter++;
         this.drawCount();
         this.nextGoblinStep();
-      } else if(event.target.closest('.game-field')) {
+      } else if (event.target.closest('.game-field')) {
         this.missCounter++;
         this.drawCount();
         this.gamecheck();
       }
-    })
+    });
   }
 
   nextGoblinStep() {

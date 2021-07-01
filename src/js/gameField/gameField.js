@@ -32,7 +32,7 @@ export default class DrawGameField {
 
     this.missBlock = document.createElement('p');
     this.missBlock.classList.add('miss');
-    
+
     this.gameFieldConteiner.insertAdjacentElement('afterbegin', this.hitBlock);
     this.gameFieldConteiner.appendChild(this.missBlock);
   }
