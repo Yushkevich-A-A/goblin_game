@@ -1,4 +1,21 @@
+body {
+  /* cursor: url('/src/image/aim..png') 19 12, auto; */
+  /* position: relative; */
+}
+
 .cursor {
   position: absolute;
+  width: 56px;
+  height: 56px;
   z-index: 99;
+  background-image: url('/src/image/aim..png');
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.attack {
+  transform: rotate(-65deg);
+  transform-origin: 100% 100%;
+  transition-property: transform;
+  transition-duration: 0.05s;
 }
