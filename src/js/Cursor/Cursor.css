@@ -1,18 +1,15 @@
-
-
 .cursor {
   position: absolute;
-  width: 56px;
-  height: 56px;
   z-index: 99;
-  background-image: url('/src/image/aim..png');
-  background-repeat: no-repeat;
-  background-position: center;
 }
 
+/* .img-cursor{
+  user-select: none;
+} */
+
 .attack {
-  transform: rotate(-65deg);
-  transform-origin: 100% 100%;
+  transform: rotate(-85deg);
+  transform-origin: 50% 100%;
   transition-property: transform;
   transition-duration: 0.05s;
 }

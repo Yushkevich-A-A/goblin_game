@@ -1,3 +1,5 @@
 .body {
   background: #000;
+  cursor: crosshair;
+  user-select: none;
 }

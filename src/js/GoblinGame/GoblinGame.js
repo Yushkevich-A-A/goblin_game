@@ -2,14 +2,18 @@ export default class GoblinGame {
   constructor(gameField, goblin) {
     this.gameField = gameField;
     this.goblin = goblin;
-    this.hitCounter = 0;
-    this.missCounter = 0;
     this.init();
   }
 
   init(){
+    this.resetGame()
+    this.listenerCounter()
+  }
+
+  resetGame() {
+    this.hitCounter = 0;
+    this.missCounter = 0;
     this.drawCount()
-    // addListeners()
   }
 
   drawCount() {
@@ -17,9 +21,30 @@ export default class GoblinGame {
     this.gameField.missBlock.textContent = this.missCounter;
   }
 
-  // addListeners() {
-  //   document.addEventListener('mouseup', event => {
-  //     this.gameField.gameField.style.cursor = ''
-  //   })
-  // }
+  listenerCounter() {
+    document.addEventListener('mousedown', event => {
+      if (event.target.closest('.goblin')) {
+        this.hitCounter++;
+        this.drawCount();
+        this.nextGoblinStep();
+      } else if(event.target.closest('.game-field')) {
+        this.missCounter++;
+        this.drawCount();
+        this.gamecheck();
+      }
+    })
+  }
+
+  nextGoblinStep() {
+    this.goblin.stopActive();
+    this.goblin.movementGoblin();
+  }
+
+  gamecheck() {
+    if (this.missCounter <= 5) {
+      return;
+    }
+    alert('вы проиграли((');
+    this.resetGame();
+  }
 }
