@@ -3,10 +3,6 @@
   z-index: 99;
 }
 
-/* .img-cursor{
-  user-select: none;
-} */
-
 .attack {
   transform: rotate(-85deg);
   transform-origin: 50% 100%;
